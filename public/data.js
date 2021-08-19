@@ -106,7 +106,7 @@ terceraVel.addEventListener("click", () => {
 W_botton.addEventListener("click", () => {
   console.log("w");
   const action = "publish/w";
-  //  const actionVel = "/publish/" + String(velCarrito);
+  const actionVel = "/publish/" + String(velCarrito);
 
   fetchPublishData(action);
   // fetchPublishData(actionVel);
