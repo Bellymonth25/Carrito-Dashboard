@@ -112,8 +112,8 @@ W_botton.addEventListener("click", () => {
   // fetchPublishData(actionVel);
 	//
 	fetch(document.URL + action)
-    .then(res => res.json())
-    .then(res => console.log(res))
+    .then((res) => res.json())
+    .then((res) => console.log(res))
     .catch(e => console.log(e));
 });
 
