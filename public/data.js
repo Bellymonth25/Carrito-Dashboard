@@ -5,6 +5,7 @@ var distancia = [];
 var umbralMin = 10;
 var umbralMax = 30;
 var marcha = 0;
+var velCarrito = 1;
 
 var indicadorVelocidad = document.getElementById("barra-velocidad");
 var indicadorC1Red = document.getElementById("c1-red");
@@ -89,48 +90,48 @@ const D_botton = document.getElementById("button-d");
 
 primeraVel.addEventListener("click", () => {
   console.log("1");
-  velocidad = 1;
+  velCarrito = 1;
 });
 
 segundaVel.addEventListener("click", () => {
   console.log("2");
-  velocidad = 2;
+  velCarrito = 2;
 });
 
 terceraVel.addEventListener("click", () => {
   console.log("3");
-  velocidad = 3;
+  velCarrito = 3;
 });
 
 W_botton.addEventListener("click", () => {
-  console.log("W");
+  console.log("w");
   const action = "publish/w";
-  const actionVel = "publish/" + String(velocidad);
+  const actionVel = "publish/" + String(velCarrito);
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
 });
 
 A_botton.addEventListener("click", () => {
-  console.log("A");
+  console.log("a");
   const action = "publish/a";
-  const actionVel = "publish/" + String(velocidad);
+  const actionVel = "publish/" + String(velCarrito);
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
 });
 
 S_botton.addEventListener("click", () => {
-  console.log("S");
+  console.log("a");
   const action = "publish/q";
 
   fetchPublishData(action);
 });
 
 D_botton.addEventListener("click", () => {
-  console.log("D");
+  console.log("d");
   const action = "publish/d";
-  const actionVel = "publish/" + String(velocidad);
+  const actionVel = "publish/" + String(velCarrito);
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
