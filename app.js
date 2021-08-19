@@ -32,7 +32,7 @@ app.get("/publish/:action", (req, res) => {
     }
 
     console.log("Published " + String(stdout));
-    res.status(200).send(JSON.stringify({ status: "published" }));
+    //res.status(200).send(JSON.stringify({ status: "published" }));
   });
 });
 

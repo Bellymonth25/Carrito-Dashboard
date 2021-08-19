@@ -111,9 +111,13 @@ W_botton.addEventListener("click", () => {
   // fetchPublishData(action);
   // fetchPublishData(actionVel);
 	//
-	fetch(document.URL + action).then(res => res.json()).then(res => console.log(res)).catch(e => console.log(e));
+	fetch(document.URL + action)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(e => console.log(e));
 });
 
+/*
 A_botton.addEventListener("click", () => {
   console.log("a");
   const action = "/publish/a";
@@ -139,9 +143,9 @@ D_botton.addEventListener("click", () => {
   fetchPublishData(actionVel);
 });
 
-const fetchPublishData = (action) => {
+/*const fetchPublishData = (action) => {
   fetch(window.location.href + action)
     .then(res => res.json())
     .then(res => console.log(res))
     .catch(e => console.log(e));
-};
+};*/
