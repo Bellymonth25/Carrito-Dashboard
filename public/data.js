@@ -142,7 +142,7 @@ D_botton.addEventListener("click", () => {
 
 parar_botton.addEventListener("click", () => {
   console.log("q");
-  const action = "publish/d";
+  const action = "publish/q";
 
   fetchPublishData(action);
 });
