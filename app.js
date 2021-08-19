@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.get("/publish/:action", (req, res) => {
   const action = req.params.action;
-  const publishURL = `aws --region us-east-1 iot-data publish --topic 'inTopic' --cli-binary-format raw-in-base64-out --payload '{\"action\": \"${action}\"}'`;
+  const publishURL = `aws --region us-east-1 iot-data publish --topic 'inTopic' --payload '{\"action\": \"${action}\"}'`;
 
   exec(publishURL, (error, stdout, stderr) => {
     if (error) {
