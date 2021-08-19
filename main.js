@@ -1,6 +1,6 @@
 const app = require("./app");
 
-const PORT = 5000;
+const PORT = 8000;
 
 // Servidor
 app.listen(PORT, () => {
