@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.status(200).sendFile(__dirname + "/public/index.html");
 });
 
-app.get("publish/:action", (req, res) => {
+app.get("/publish/:action", (req, res) => {
 
   const action = req.params.action;
   const publishURL = `aws --region us-east-1 iot-data publish --topic 'inTopic' --cli-binary-format raw-in-base64-out --payload '{\"action\": \"${action}\"}'`;
