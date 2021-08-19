@@ -109,7 +109,7 @@ W_botton.addEventListener("click", () => {
   const actionVel = "/publish/" + String(velCarrito);
 
   fetchPublishData(action);
-  // fetchPublishData(actionVel);
+  fetchPublishData(actionVel);
 });
 
 A_botton.addEventListener("click", () => {
