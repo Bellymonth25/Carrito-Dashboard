@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/publish/:action", (req, res) => {
+
   const action = req.params.action;
   const publishURL = `aws --region us-east-1 iot-data publish --topic 'inTopic' --cli-binary-format raw-in-base64-out --payload '{\"action\": \"${action}\"}'`;
 
@@ -26,13 +27,13 @@ app.get("/publish/:action", (req, res) => {
       res.status(200).send(error);
     }
 
-    if (stderr) {
+    /*if (stderr) {
       console.log(stderr);
       res.status(200).send(stderr);
-    }
+    }*/
 
     console.log("Published " + String(stdout));
-    //res.status(200).send(JSON.stringify({ status: "published" }));
+    res.status(200).send(JSON.stringify({ status: "published" }));
   });
 });
 
