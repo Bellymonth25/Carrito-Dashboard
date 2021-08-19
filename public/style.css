@@ -1,0 +1,590 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/*--------------------- Variables del Documento ---------------------*/
+
+:root {
+  --color-negro: #202020;
+  --color-gris-obscuro: #474747;
+  --color-gris-claro: #666666;
+  --color-blanco: #d9d9d9;
+  --color-amarillo-mostaza: #ffbd59;
+  --color-rojo: #ff1616;
+  --color-verde: #7ed957;
+  --tri-lrg-a: 13px;
+  --tri-lrg-b: 19px;
+}
+
+/*--------------------- Parámetros Globales ---------------------*/
+
+.container {
+  display: flex;
+}
+
+body {
+  background-color: var(--color-negro);
+}
+
+.separador {
+  content: "";
+  height: 10px;
+  background-color: var(--color-blanco);
+  width: 100%;
+}
+
+/*--------------------- Header Carrito ---------------------*/
+
+#titulo-carrito {
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  background-color: var(--color-gris-obscuro);
+  height: 12vh;
+  overflow: hidden;
+}
+
+#titulo-carrito div {
+  width: 30%;
+  height: 80px;
+}
+
+#titulo-carrito .ala-izquierda div,
+#titulo-carrito .ala-derecha div {
+  background-color: var(--color-blanco);
+}
+
+#titulo-carrito .ala-izquierda div:nth-child(2),
+#titulo-carrito .ala-derecha div:nth-child(2) {
+  background-color: var(--color-amarillo-mostaza);
+}
+
+#titulo-carrito .titulo {
+  width: 40%;
+  text-align: center;
+  font-size: 1.8em;
+  height: fit-content;
+  color: var(--color-blanco);
+}
+
+#titulo-carrito .ala-izquierda,
+#titulo-carrito .ala-derecha {
+  flex-direction: column;
+  padding: 25px 30px;
+}
+
+#titulo-carrito .ala-izquierda div,
+#titulo-carrito .ala-derecha div {
+  height: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#titulo-carrito .ala-izquierda div:last-child,
+#titulo-carrito .ala-derecha div:last-child {
+  margin-bottom: 0px;
+}
+
+/*--------------------- Contenido Principal ---------------------*/
+
+#main-carrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 78vh;
+  padding: 0px 50px;
+}
+
+#velocidad {
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#velocidad-sensor {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* D-Pad */
+
+#d-pad {
+  position: relative;
+  background-color: var(--color-gris-obscuro);
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#d-pad::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 20%;
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  background-color: var(--color-gris-claro);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+#d-pad:hover::after {
+  width: 30%;
+  height: 30%;
+}
+
+#d-pad a {
+  display: block;
+  position: absolute;
+  -webkit-tap-highlight-color: var(--color-blanco);
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  transform: rotate(45deg);
+  border: 1px solid var(--color-blanco);
+}
+
+#d-pad a::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  background-color: var(--color-gris-claro);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s;
+  cursor: pointer;
+  display: none;
+}
+
+#d-pad a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 5px;
+  border-style: solid;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: all 0.25s;
+}
+
+#d-pad .up {
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%) rotate(45deg);
+  border-top-left-radius: 50%;
+  z-index: 1;
+}
+
+#d-pad .up::before {
+  left: 57%;
+  top: 57%;
+}
+
+#d-pad .up::after {
+  left: 53%;
+  top: 53%;
+  border-width: 0 var(--tri-lrg-a) var(--tri-lrg-b) var(--tri-lrg-a);
+  border-color: transparent transparent var(--color-blanco) transparent;
+}
+
+#d-pad .down {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%) rotate(45deg);
+  border-bottom-right-radius: 50%;
+  z-index: 1;
+}
+
+#d-pad .down::before {
+  left: 43%;
+  top: 43%;
+}
+
+#d-pad .down::after {
+  left: 47%;
+  top: 47%;
+  border-width: var(--tri-lrg-b) var(--tri-lrg-a) 0px var(--tri-lrg-a);
+  border-color: var(--color-blanco) transparent transparent transparent;
+}
+
+#d-pad .left {
+  top: 50%;
+  right: 50%;
+  transform: translate(-20%, -50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  border: none;
+}
+
+#d-pad .left::before {
+  left: 57%;
+  top: 43%;
+}
+
+#d-pad .left::after {
+  left: 53%;
+  top: 47%;
+  border-width: var(--tri-lrg-a) var(--tri-lrg-b) var(--tri-lrg-a) 0;
+  border-color: transparent var(--color-blanco) transparent transparent;
+}
+
+#d-pad .rigth {
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -50%) rotate(45deg);
+  border-top-right-radius: 50%;
+  border: none;
+}
+
+#d-pad .rigth::before {
+  left: 43%;
+  top: 57%;
+}
+
+#d-pad .rigth::after {
+  left: 47%;
+  top: 53%;
+  border-width: var(--tri-lrg-a) 0 var(--tri-lrg-a) var(--tri-lrg-b);
+  border-color: transparent transparent transparent var(--color-blanco);
+}
+
+#d-pad .up:hover,
+#d-pad .down:hover,
+#d-pad .rigth:hover,
+#d-pad .left:hover {
+  background-color: var(--color-amarillo-mostaza);
+}
+
+#d-pad .up:hover::after {
+  border-color: transparent transparent var(--color-gris-claro) transparent;
+}
+
+#d-pad .down:hover::after {
+  border-color: var(--color-gris-claro) transparent transparent transparent;
+}
+
+#d-pad .left:hover::after {
+  border-color: transparent var(--color-gris-claro) transparent transparent;
+}
+
+#d-pad .rigth:hover::after {
+  border-color: transparent transparent transparent var(--color-gris-claro);
+}
+
+/* Velocidades del carrito - Marchas */
+
+/* Velocidad Carrito */
+
+#velocidades-carrito .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+#velocidades-carrito h2 {
+  color: var(--color-blanco);
+  font-size: 3em;
+  margin-bottom: 25px;
+}
+
+#velocidades-carrito .contenedor-velocidad {
+  width: 13vw;
+  height: 12vh;
+  background-color: var(--color-gris-obscuro);
+  margin-bottom: 20px;
+  border: 3px solid var(--color-blanco);
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-blanco);
+}
+
+#velocidades-carrito .contenedor-velocidad:hover {
+  background-color: var(--color-amarillo-mostaza);
+}
+
+#velocidades-carrito .contenedor-velocidad:hover span {
+  color: var(--color-gris-obscuro);
+}
+
+#velocidades-carrito .contenedor-velocidad span {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+#velocidad {
+  text-align: start;
+}
+
+#velocidad .circular-progress-text {
+  color: var(--color-blanco);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#text-0 {
+  margin-left: -2.5px;
+}
+
+#text-100 {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 13.8rem;
+}
+
+.circular-progress {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 15px 25px;
+}
+
+.barOverflow {
+  /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 15rem;
+  height: 7.5rem; /* Half circle (overflow) */
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 15rem; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1.5rem solid var(--color-gris-claro); /* half gray, */
+  border-bottom-color: var(--color-amarillo-mostaza); /* half azure */
+  border-right-color: var(--color-amarillo-mostaza);
+  transform: rotate(100deg);
+}
+
+#barra-velocidad {
+  transition: 2s;
+}
+
+/* Sensor Carrito */
+
+#sensor-proximidad {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#sensor-proximidad .circulos-proximidad {
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+#c1-red,
+#c2-red,
+#c1-yellow,
+#c2-yellow,
+#c1-green,
+#c2-green {
+  overflow-y: hidden;
+}
+
+#c1-red .circular-progress,
+#c2-red .circular-progress,
+#c1-yellow .circular-progress,
+#c2-yellow .circular-progress,
+#c1-green .circular-progress,
+#c2-green .circular-progress {
+  transform: rotate(-237deg);
+}
+
+#c1-red,
+#c2-red,
+#c1-yellow,
+#c2-yellow,
+#c1-green {
+  position: absolute;
+  left: 0;
+}
+
+#c2-red {
+  padding-left: 25px;
+}
+
+#c1-yellow {
+  padding-left: 50px;
+}
+
+#c2-yellow {
+  padding-left: 75px;
+}
+
+#c1-green {
+  padding-left: 100px;
+}
+
+#c2-green {
+  padding-left: 132px;
+}
+
+/* circulos rojos */
+
+#c1-red .barOverflow {
+  width: 5rem;
+  height: 2.5rem;
+}
+
+#c1-red .bar {
+  width: 5rem;
+  height: 5rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-rojo);
+  border-right-color: var(--color-rojo);
+  transform: rotate(160deg);
+}
+
+#c1-red .circular-progress {
+  padding: 25px;
+}
+
+#c2-red .circular-progress {
+  padding: 30px;
+}
+
+#c2-red .barOverflow {
+  width: 6rem;
+  height: 3rem;
+}
+
+#c2-red .bar {
+  width: 6rem;
+  height: 6rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-rojo);
+  border-right-color: var(--color-rojo);
+  transform: rotate(160deg);
+}
+
+/* circulos amarillos */
+
+#c1-yellow .barOverflow {
+  width: 7rem;
+  height: 3.5rem;
+}
+
+#c1-yellow .bar {
+  width: 7rem;
+  height: 7rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-amarillo-mostaza);
+  border-right-color: var(--color-amarillo-mostaza);
+  transform: rotate(160deg);
+}
+
+#c1-yellow .circular-progress {
+  padding: 35px;
+}
+
+#c2-yellow .barOverflow {
+  width: 8rem;
+  height: 4rem;
+}
+
+#c2-yellow .bar {
+  width: 8rem;
+  height: 8rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-amarillo-mostaza);
+  border-right-color: var(--color-amarillo-mostaza);
+  transform: rotate(160deg);
+}
+
+#c2-yellow .circular-progress {
+  padding: 40px;
+}
+
+/* circulos verdes */
+
+#c1-green .barOverflow {
+  width: 9rem;
+  height: 4.5rem;
+}
+
+#c1-green .bar {
+  width: 9rem;
+  height: 9rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-verde);
+  border-right-color: var(--color-verde);
+  transform: rotate(160deg);
+}
+
+#c1-green .circular-progress {
+  padding: 45px;
+}
+
+#c2-green .barOverflow {
+  width: 10rem;
+  height: 5rem;
+}
+
+#c2-green .bar {
+  width: 10rem;
+  height: 10rem;
+  border: 1rem solid var(--color-negro);
+  border-bottom-color: var(--color-verde);
+  border-right-color: var(--color-verde);
+  transform: rotate(160deg);
+}
+
+#c2-green .circular-progress {
+  padding: 50px;
+}
+
+#sensor-velocidad-texto {
+  color: var(--color-blanco);
+  font-size: 2em;
+  font-weight: 500;
+}
+
+/*--------------------- Footer Carrito ---------------------*/
+
+#footer-carrito {
+  height: 10vh;
+  position: relative;
+  background-color: var(--color-gris-obscuro);
+}
+
+#footer-carrito span {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: var(--color-blanco);
+}

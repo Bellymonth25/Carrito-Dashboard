@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Carrito DM</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="titulo-carrito" class="container">
+        <div class="container ala-izquierda">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="titulo">
+            <h1>CONTROL REMOTO</h1>
+        </div>
+        <div class="container ala-derecha">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="separador"></div>
+
+    <div id="main-carrito">
+        <div id="d-pad">
+            <a id="button-w" class="up"></a>
+            <a id="button-d" class="rigth "></a>
+            <a id="button-s" class="down"></a>
+            <a id="button-a" class="left"></a>
+        </div>
+        <div id="velocidades-carrito">
+            <div class="container">
+                <h2>Marcha</h2>
+                <div id="vel-1" class="contenedor-velocidad container">
+                    <span>1</span>
+                </div>
+                <div id="vel-2" class="contenedor-velocidad container">
+                    <span>2</span>
+                </div>
+                <div id="vel-3" class="contenedor-velocidad container">
+                    <span>3</span>
+                </div>
+            </div>
+        </div>
+        <div id="velocidad-sensor">
+            <div id="velocidad" class="container">
+                <div class="circular-progress">
+                    <div class="barOverflow">
+                        <div id="barra-velocidad" class="bar"></div>
+                    </div>
+                    <span class="circular-progress-text" id="text-0">0%</span>
+                    <span class="circular-progress-text" id="text-100">100%</span>
+                </div>
+            </div>    
+            <div id="sensor-proximidad" class="container">
+                <img src="resources/car.png" width="250px" height="auto">
+                <div class="circulos-proximidad container">
+                    <div id="c1-red">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c2-red">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c1-yellow">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c2-yellow">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c1-green">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c2-green">
+                        <div class="circular-progress">
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span id="sensor-velocidad-texto">Sensor de Proximidad</span>
+        </div>
+    </div>
+
+    <div id="footer-carrito">
+        <div class="separador"></div>
+        <span>Proyecto Diseño Mecatrónico</span>
+    </div>
+
+    <!-- Java Script -->
+    <script type="module" src="data.js"></script>
+
+</body>
+
+</html>
