@@ -106,18 +106,12 @@ terceraVel.addEventListener("click", () => {
 W_botton.addEventListener("click", () => {
   console.log("w");
   const action = "publish/w";
- //  const actionVel = "/publish/" + String(velCarrito);
+  //  const actionVel = "/publish/" + String(velCarrito);
 
-  // fetchPublishData(action);
+  fetchPublishData(action);
   // fetchPublishData(actionVel);
-	//
-	fetch(document.URL + action)
-    .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch(e => console.log(e));
 });
 
-/*
 A_botton.addEventListener("click", () => {
   console.log("a");
   const action = "/publish/a";
@@ -143,9 +137,9 @@ D_botton.addEventListener("click", () => {
   fetchPublishData(actionVel);
 });
 
-/*const fetchPublishData = (action) => {
+const fetchPublishData = (action) => {
   fetch(window.location.href + action)
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(e => console.log(e));
-};*/
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+    .catch((e) => console.log(e));
+};
