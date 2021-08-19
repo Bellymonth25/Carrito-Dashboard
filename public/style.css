@@ -301,8 +301,8 @@ body {
 }
 
 #velocidades-carrito .contenedor-velocidad {
-  width: 13vw;
-  height: 12vh;
+  width: 11vw;
+  height: 9vh;
   background-color: var(--color-gris-obscuro);
   margin-bottom: 20px;
   border: 3px solid var(--color-blanco);
@@ -313,12 +313,20 @@ body {
   color: var(--color-blanco);
 }
 
+#velocidades-carrito #parar-carro {
+  background-color: var(--color-rojo);
+}
+
 #velocidades-carrito .contenedor-velocidad:hover {
   background-color: var(--color-amarillo-mostaza);
 }
 
 #velocidades-carrito .contenedor-velocidad:hover span {
   color: var(--color-gris-obscuro);
+}
+
+#velocidades-carrito #parar-carro:hover span {
+  color: var(--color-negro);
 }
 
 #velocidades-carrito .contenedor-velocidad span {

@@ -87,6 +87,7 @@ const W_botton = document.getElementById("button-w");
 const A_botton = document.getElementById("button-a");
 const S_botton = document.getElementById("button-s");
 const D_botton = document.getElementById("button-d");
+const parar_botton = document.getElementById("parar-carro");
 
 primeraVel.addEventListener("click", () => {
   console.log("1");
@@ -118,14 +119,16 @@ A_botton.addEventListener("click", () => {
   const actionVel = "publish/" + String(velCarrito);
 
   fetchPublishData(action);
-  //fetchPublishData(actionVel);
+  fetchPublishData(actionVel);
 });
 
 S_botton.addEventListener("click", () => {
   console.log("s");
   const action = "publish/s";
+  const actionVel = "publish/" + String(velCarrito);
 
   fetchPublishData(action);
+  fetchPublishData(actionVel);
 });
 
 D_botton.addEventListener("click", () => {
@@ -135,6 +138,13 @@ D_botton.addEventListener("click", () => {
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
+});
+
+parar_botton.addEventListener("click", () => {
+  console.log("q");
+  const action = "publish/d";
+
+  fetchPublishData(action);
 });
 
 const fetchPublishData = (action) => {
