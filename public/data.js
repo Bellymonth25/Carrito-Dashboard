@@ -106,16 +106,18 @@ terceraVel.addEventListener("click", () => {
 W_botton.addEventListener("click", () => {
   console.log("w");
   const action = "publish/w";
-  const actionVel = "publish/" + String(velCarrito);
+ //  const actionVel = "/publish/" + String(velCarrito);
 
-  fetchPublishData(action);
-  fetchPublishData(actionVel);
+  // fetchPublishData(action);
+  // fetchPublishData(actionVel);
+	//
+	fetch(document.URL + action).then(res => res.json()).then(res => console.log(res)).catch(e => console.log(e));
 });
 
 A_botton.addEventListener("click", () => {
   console.log("a");
-  const action = "publish/a";
-  const actionVel = "publish/" + String(velCarrito);
+  const action = "/publish/a";
+  const actionVel = "/publish/" + String(velCarrito);
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
@@ -123,23 +125,23 @@ A_botton.addEventListener("click", () => {
 
 S_botton.addEventListener("click", () => {
   console.log("a");
-  const action = "publish/q";
+  const action = "/publish/q";
 
   fetchPublishData(action);
 });
 
 D_botton.addEventListener("click", () => {
   console.log("d");
-  const action = "publish/d";
-  const actionVel = "publish/" + String(velCarrito);
+  const action = "/publish/d";
+  const actionVel = "/publish/" + String(velCarrito);
 
   fetchPublishData(action);
   fetchPublishData(actionVel);
 });
 
 const fetchPublishData = (action) => {
-  fetch(document.URL + action)
-    .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch((e) => console.log(e));
+  fetch(window.location.href + action)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(e => console.log(e));
 };
