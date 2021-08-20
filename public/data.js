@@ -161,7 +161,8 @@ setTimeout(function () {
     .then((res) => {
       let parser = new DOMParser();
       let xmlDoc = parser.parseFromString(res, "text/xml");
-      // console.log()
+
+      velocidad = [];
 
       for (let item of xmlDoc.getElementsByTagName("Key")) {
         let url = item.childNodes[0].nodeValue;
