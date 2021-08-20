@@ -155,23 +155,20 @@ const fetchPublishData = (action) => {
 };
 
 // Se llama a la función para recibir la información del broker cada 5 segundos
-setTimeout(
-  (refresh = () => {
-    fetch("https://esp32ivandistcarro.s3.amazonaws.com")
-      .then((res) => res.text())
-      .then((res) => {
-        let parser = new DOMParser();
-        let xmlDoc = parser.parseFromString(res, "text/xml");
-        // console.log()
+setTimeout(function () {
+  fetch("https://esp32ivandistcarro.s3.amazonaws.com")
+    .then((res) => res.text())
+    .then((res) => {
+      let parser = new DOMParser();
+      let xmlDoc = parser.parseFromString(res, "text/xml");
+      // console.log()
 
-        for (let item of xmlDoc.getElementsByTagName("Key")) {
-          let url = item.childNodes[0].nodeValue;
+      for (let item of xmlDoc.getElementsByTagName("Key")) {
+        let url = item.childNodes[0].nodeValue;
 
-          if (url.replace("dataLake/", "") != "") {
-            getData(url);
-          }
+        if (url.replace("dataLake/", "") != "") {
+          getData(url);
         }
-      });
-  }),
-  5000
-);
+      }
+    });
+}, 5000);
