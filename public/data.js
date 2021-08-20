@@ -2,8 +2,8 @@
 
 var velocidad = [];
 var distancia = [];
-var umbralMin = 10;
-var umbralMax = 40;
+var umbralMin = 5;
+var umbralMax = 10;
 var marcha = 0;
 var velCarrito = 1;
 
