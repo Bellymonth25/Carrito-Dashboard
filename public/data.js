@@ -2,8 +2,8 @@
 
 var velocidad = [];
 var distancia = [];
-var umbralMin = 10;
-var umbralMax = 30;
+var umbralMin = 5;
+var umbralMax = 40;
 var marcha = 0;
 var velCarrito = 1;
 
@@ -153,3 +153,25 @@ const fetchPublishData = (action) => {
     .then((res) => console.log(res))
     .catch((e) => console.log(e));
 };
+
+// Se llama a la función para recibir la información del broker cada 5 segundos
+setTimeout(
+  (refresh = () => {
+    fetch("https://esp32ivandistcarro.s3.amazonaws.com")
+      .then((res) => res.text())
+      .then((res) => {
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(res, "text/xml");
+        // console.log()
+
+        for (let item of xmlDoc.getElementsByTagName("Key")) {
+          let url = item.childNodes[0].nodeValue;
+
+          if (url.replace("dataLake/", "") != "") {
+            getData(url);
+          }
+        }
+      });
+  }),
+  5000
+);
