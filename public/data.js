@@ -155,7 +155,7 @@ const fetchPublishData = (action) => {
 };
 
 // Se llama a la función para recibir la información del broker cada 5 segundos
-setTimeout(function () {
+setInterval(function () {
   fetch("https://esp32ivandistcarro.s3.amazonaws.com")
     .then((res) => res.text())
     .then((res) => {
