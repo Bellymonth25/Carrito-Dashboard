@@ -172,4 +172,4 @@ setTimeout(function () {
 
       console.log("Se actualizaron los datos...");
     });
-}, 10000);
+}, 5000);
