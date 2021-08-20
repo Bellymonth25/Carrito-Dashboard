@@ -169,5 +169,7 @@ setTimeout(function () {
           getData(url);
         }
       }
+
+      console.log("Se actualizaron los datos...");
     });
 }, 10000);
