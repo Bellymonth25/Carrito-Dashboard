@@ -171,5 +171,6 @@ setInterval(function () {
       }
 
       console.log("Se actualizaron los datos...");
+      console.log(distancia);
     });
 }, 5000);
